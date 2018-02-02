@@ -11,6 +11,7 @@ matrix:
 sudo: false
 
 before_install:
+    - echo $COLUMNS
     - if [[ "$TRAVIS_OS_NAME" == "linux"                      ]] ; then sudo apt-get -qq update        ; fi
     - if [[ "$TRAVIS_OS_NAME" == "linux" && ! $(which expect) ]] ; then sudo apt-get install -y expect ; fi
     - if [[ "$TRAVIS_OS_NAME" == "osx"                        ]] ; then brew update                    ; fi
